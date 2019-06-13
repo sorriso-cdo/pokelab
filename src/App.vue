@@ -1,15 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Hello from Adrian"/>
-    <card :url="item.pokemon.url" v-for="item in pokemonOfRockType" key="item.pokemon.name"></card>
-    
-    <card v-for="item in pokemonOfRockType" :key="item.pokemon.name"></card>
-
-    <div v-for="item in pokemonOfRockType" :key="item.pokemon.name"> 
-      {{ item.pokemon.name }}
+    <div class="container">
+      <h1 class="text-center display-1 my-5"> Rock Type Pokemon </h1>
+      <div class="row">
+          <card :url="item.pokemon.url" v-for="item in pokemonOfRockType" v-bind:key="item.pokemon.name"></card>
+      </div>
     </div>
-
   </div>
 </template>
 
@@ -49,12 +45,4 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
