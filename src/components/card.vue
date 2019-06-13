@@ -3,6 +3,7 @@
      <div class="card" style="width: 18rem;">
   <img src="" class="card-img-top" alt="...">
   <div class="card-body">
+      <h1> {{ url }} </h1>
     <img :src="pokemon.sprites.front_default" class="card-img-top" alt="..">  
     <h3 class="card-title">{{ pokemon.name }}</h3>
     <h5 class="card-title">Height: {{ pokemon.height * 3.937 }} inches</h5>
@@ -25,7 +26,7 @@ export default {
       }
   },
   props: {
-    msg: String
+    url: String
   },
   mounted: function() {
     console.log("mounted function ran")
@@ -35,7 +36,7 @@ export default {
 
      axios({
         method: 'get',
-        url: 'https://pokeapi.co/api/v2/pokemon/pikachu',
+        url: vm.url,
         responseType: 'stream'
         })
      .then(function (response) {
